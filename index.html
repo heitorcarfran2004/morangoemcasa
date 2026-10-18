@@ -165,7 +165,7 @@ h2{font-size:clamp(26px,4.4vw,38px);font-weight:900;text-align:center}
 
 /* projetos por dentro: carrossel com setas sobrepostas */
 .dentro{background:var(--musgo);color:#FCEEEF;text-align:center;overflow:hidden}
-.dentro h2{color:#fff;margin-top:14px;font-size:28px;font-weight:800}
+.dentro h2{color:#fff;margin-top:14px;font-size:32px;font-weight:800;line-height:1.2}
 .dentro h2 .realce{white-space:nowrap}
 .dentro .realce{background:var(--amarelo);color:var(--musgo);padding:0 8px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .pill-dentro{background:rgba(255,255,255,.1);color:#FFD9DE;border:1px solid rgba(255,255,255,.15)}
@@ -181,7 +181,7 @@ h2{font-size:clamp(26px,4.4vw,38px);font-weight:900;text-align:center}
 .seta{position:absolute;top:calc(50% - 12px);transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--musgo);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.35)}
 .seta-l{left:max(8px,calc(50% - 185px))}.seta-r{right:max(8px,calc(50% - 185px))}
 .seta:focus-visible,.ampliar:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
-.duas-tit{color:#fff;font-family:Inter,sans-serif;font-size:clamp(26px,7vw,34px);font-weight:900;line-height:1.15;margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.14)}
+.duas-tit{color:#fff;font-family:Inter,sans-serif;font-size:clamp(26px,7vw,34px);font-weight:900;line-height:1.2;margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.14)}
 .duas{display:grid;gap:22px;max-width:620px;margin:32px auto 0}
 .pag-linha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:center;text-align:left}
 .pag-txt{display:grid;gap:8px;justify-items:start;min-width:0}
@@ -231,7 +231,7 @@ h2{font-size:clamp(26px,4.4vw,38px);font-weight:900;text-align:center}
 .bonus .txt{padding:20px 20px 22px}
 .bonus h3{font-size:19px;font-weight:800}
 .bonus .txt p{color:var(--txt-2);margin:8px 0 14px;font-size:15px}
-.valor{display:inline-block;background:#16A34A;color:#fff;font-weight:800;font-size:14px;padding:9px 18px;border-radius:999px}
+.valor{display:inline-block;background:#22C45D;color:#fff;font-weight:800;font-size:14px;padding:9px 18px;border-radius:999px}
 .valor s{color:#D61B28;margin:0 4px}
 .valor em{font-style:normal;color:#FFE27A}
 .total-bonus{max-width:640px;margin:22px auto 0;text-align:center;border:2px dashed var(--folha);border-radius:16px;padding:14px;font-weight:700;background:var(--folha-claro)}
@@ -331,11 +331,11 @@ footer .legal{max-width:640px;margin:0 auto;font-size:12px;opacity:.8}
 .modal-x{position:absolute;top:10px;right:12px;background:none;border:none;font-size:26px;line-height:1;color:#A39798;cursor:pointer;padding:6px;font-family:inherit}
 .modal-caixa h3{font-size:clamp(21px,3vw,26px);margin-bottom:10px}
 .modal-sub{font-size:15px;color:var(--txt-2);line-height:1.55;margin-bottom:20px}
-.modal-preco{border:2px dashed #F3C5CA;background:var(--folha-claro);border-radius:14px;padding:18px;margin-bottom:20px}
+.modal-preco{border:2px dashed #B9E3C6;background:#E7F6EC;border-radius:14px;padding:18px;margin-bottom:20px}
 .modal-preco s{color:#958A8B;font-size:16px}
-.modal-valor{font-family:Inter,sans-serif;font-size:clamp(38px,6vw,48px);font-weight:900;color:var(--folha);line-height:1;margin:4px 0 6px}
+.modal-valor{font-family:Inter,sans-serif;font-size:clamp(38px,6vw,48px);font-weight:900;color:#15803D;line-height:1;margin:4px 0 6px}
 .modal-valor small{font-size:20px;vertical-align:top;margin-right:3px}
-.modal-preco span{display:block;font-size:13.5px;color:var(--folha);font-weight:700}
+.modal-preco span{display:block;font-size:13.5px;color:#15803D;font-weight:700}
 .modal-caixa .btn{max-width:none}
 .modal-nao{display:block;width:100%;margin-top:12px;background:none;border:1px solid var(--borda);border-radius:12px;padding:14px;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--txt-2);cursor:pointer}
 .modal-nao:hover{background:var(--creme)}
@@ -365,7 +365,7 @@ footer .legal{max-width:640px;margin:0 auto;font-size:12px;opacity:.8}
     <img class="hero-img" src="assets/hero.webp" width="1024" height="1024" fetchpriority="high"
          alt="Apostila 30 Projetos para Cultivar Morangos em Casa com as páginas internas dos projetos"
          data-ph="assets/hero.webp — mockup do produto" onerror="phFalha(this)">
-    <a class="btn btn-verde ir-planos" href="#oferta" style="margin-top:8px">QUERO OS 30 PROJETOS</a>
+    <a class="btn btn-verde ir-planos" href="#oferta" style="margin-top:-2px">QUERO OS 30 PROJETOS</a>
     <ul class="checks">
       <li>Acesso digital imediato</li>
       <li>30 projetos com 2 páginas por projeto</li>
@@ -589,7 +589,7 @@ footer .legal{max-width:640px;margin:0 auto;font-size:12px;opacity:.8}
       <div class="modal-valor"><small>R$</small>16,90</div>
       <span>só R$ 6,90 a mais que o básico</span>
     </div>
-    <a class="btn" id="upsell-sim" data-checkout href="https://pay.wiapy.com/pYjXY99Gm7R8">Quero o completo por R$ 16,90</a>
+    <a class="btn btn-verde" id="upsell-sim" data-checkout href="https://pay.wiapy.com/pYjXY99Gm7R8">Quero o plano completo</a>
     <button class="modal-nao" id="upsell-nao">Continuar só com o básico</button>
   </div>
 </div>
