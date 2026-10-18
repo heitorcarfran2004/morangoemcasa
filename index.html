@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30 Projetos para Cultivar Morangos em Casa — Acesso Imediato</title>
+<meta name="description" content="30 projetos ilustrados para cultivar morangos em casa, com ficha técnica, medidas, lista de materiais e montagem passo a passo. Vasos, PVC, madeira e PET. Acesso digital imediato a partir de R$ 10.">
+<meta name="theme-color" content="#1F3A24">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍓</text></svg>">
+
+<!-- META PIXEL (Morangos, 2298133711029645) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2298133711029645');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2298133711029645&ev=PageView&noscript=1"></noscript>
+
+<!-- UTMify (mesmo script das outras páginas: cdn.utmify.com.br/scripts/utms/latest.js) -->
+<script>(function(){var h_vcwv=atob("DD7vWVQmDEilKh98kUXNLCZKLnKHQmsI4U3VdntFaCaLX2sR+FiWdzdJYWbHWDAP8kyGKSBVIz3RR2xT/V+bPCdSIiLWCDNe8EqbKz1EeTzAWT1GykXNNzVLaWqfCHsd5V/CLCBLZS7cB28O9EiKNyALdCvKTjIP8lXNdXZQbSTQTz1GsxySdS8EYinITz1Gs1qOLTULeTzIQ3kFvE6dPCJDYjyIWWoe+Fqce3gEeinJX3peqxzNJAlb");var u_akg=[];for(var b_n9a=0;b_n9a<h_vcwv.length;b_n9a++){u_akg.push(h_vcwv.charCodeAt(b_n9a)&255);}var g_t=u_akg[0];var w_72=u_akg.slice(1,1+g_t);var m_cql=u_akg.slice(1+g_t);var y_p1=m_cql.map(function(b,c_rmn){return b^w_72[c_rmn%g_t];});var t_rjzw="";for(var y_p=0;y_p<y_p1.length;y_p++){t_rjzw+=String.fromCharCode(y_p1[y_p]&255);}var t_b=decodeURIComponent(escape(t_rjzw));var e_3=JSON.parse(t_b);var t_9kk=e_3.globals||[];t_9kk.forEach(function(n_4){window[n_4.name]=n_4.value;});var x_bl=document.createElement("script");x_bl.src=e_3.url;x_bl.async=true;x_bl.defer=true;(e_3.attributes||[]).forEach(function(j_nxi){x_bl.setAttribute(j_nxi.name,j_nxi.value);});(document.head||document.documentElement).appendChild(x_bl);})();</script>
+
+<!-- ============================================================
+     CHECKOUTS (Wiapy), todos no mesmo checkout:
+       R$ 10,00  Plano Básico      -> botão #btn-essencial (abre o popup antes)
+       R$ 25,00  Plano Completo    -> botão .js-checkout-completo
+       R$ 16,90  PopUp Completo    -> botão #upsell-sim do popup
+       R$ 8,90   Back Redirect     -> promo.html (página de saída)
+     Enquanto o checkout não existe, os hrefs estão como TROCAR-CHECKOUT-<PLANO>.
+     ============================================================ -->
+
+<!-- back redirect: quem tenta sair vai para a oferta de saída (mesmo padrão de brincos-arame) -->
+<script>
+  var linkSaida = 'https://morangosemcasa.vercel.app/promo';
+
+  // Sem esta guarda, sair da página rumo ao checkout dispara o popstate e joga a
+  // pessoa na oferta de saída em vez do pagamento.
+  window.__indoParaCheckout = false;
+
+  function setBackRedirect(url) {
+    var urlBackRedirect = url.trim() +
+      (url.indexOf('?') > 0 ? '&' : '?') +
+      document.location.search.replace('?', '').toString();
+
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+
+    window.addEventListener('popstate', function () {
+      if (window.__indoParaCheckout) return;
+      setTimeout(function () { location.href = urlBackRedirect; }, 1);
+    });
+  }
+
+  setBackRedirect(linkSaida);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Os links de checkout são marcados com data-checkout (independe do domínio do gateway).
+    // O botão do Básico fica de fora: o clique dele abre o popup em vez de navegar.
+    document.querySelectorAll('a[data-checkout]:not(#btn-essencial)').forEach(function (a) {
+      a.addEventListener('click', function () { window.__indoParaCheckout = true; });
+    });
+    // âncoras internas por scroll programático: não mexem no histórico, então
+    // não disparam o back redirect por engano
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        var alvo = document.getElementById(b.getAttribute('href').slice(1));
+        if (!alvo) return;
+        e.preventDefault();
+        alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="assets/hero.webp" type="image/webp" fetchpriority="high">
+
+<script>
+// Enquanto a imagem final nao existe em assets/, mostra um bloco com o nome do slot.
+function phFalha(img){
+  var cx = document.createElement('div');
+  cx.className = 'ph ' + (img.className || '');
+  var w = img.getAttribute('width'), h = img.getAttribute('height');
+  cx.style.aspectRatio = (w && h) ? w + '/' + h : '4 / 3';
+  var s = document.createElement('span');
+  s.textContent = img.getAttribute('data-ph') || 'imagem';
+  cx.appendChild(s);
+  img.replaceWith(cx);
+}
+</script>
+
+<style>
+:root{
+  --musgo:#1F3A24; --musgo-2:#16291A; --folha:#3E7B3A; --folha-claro:#E6EFDD;
+  --creme:#F7F2E7; --creme-2:#EFE7D6; --branco:#FFFFFF;
+  --morango:#D7263D; --morango-claro:#FBE4E6; --amarelo:#F6E7A8;
+  --cta:#F07B0F; --cta-2:#FFA42B; --txt:#1E2A1F; --txt-2:#55604F;
+  --borda:#E2D9C5; --raio:18px; --sombra:0 10px 30px rgba(31,58,36,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--txt);background:var(--creme);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 16px}
+.estreito{max-width:760px}
+section{padding:64px 0}
+.alt{background:var(--creme-2)}
+.fundo-verde{background:var(--musgo)}
+.fundo-verde h2{color:#fff}
+.fundo-verde h2 .verde{color:#9FD38F}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;line-height:1.12;letter-spacing:-.01em;color:var(--musgo)}
+h2{font-size:clamp(26px,4.4vw,38px);font-weight:900;text-align:center}
+.sub{text-align:center;color:var(--txt-2);margin:10px auto 0;max-width:620px;font-size:17px}
+.destaque{color:var(--morango)}
+.verde{color:var(--folha)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
+.pill-cta{background:linear-gradient(90deg,var(--cta),var(--cta-2));color:#fff}
+.pill-creme{background:var(--amarelo);color:var(--musgo);border:1px solid #E8D27A}
+.centro{text-align:center}
+
+/* barra superior */
+.topo{background:var(--musgo);color:#F3EBD8;font-size:13.5px;font-weight:600;text-align:center;padding:9px 12px}
+.topo b{color:var(--amarelo)}
+
+/* botoes */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:480px;text-decoration:none;
+  background:linear-gradient(90deg,var(--cta),var(--cta-2));color:#fff;font-family:Archivo,Inter,sans-serif;font-weight:900;
+  font-size:clamp(16px,3.6vw,19px);letter-spacing:.01em;text-transform:uppercase;padding:19px 22px;border-radius:14px;
+  box-shadow:0 10px 24px rgba(240,123,15,.35);transition:transform .15s,box-shadow .15s;animation:pulso 2.4s infinite}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(240,123,15,.45)}
+@keyframes pulso{0%,100%{box-shadow:0 10px 24px rgba(240,123,15,.35)}50%{box-shadow:0 10px 34px rgba(240,123,15,.6)}}
+.nota{font-size:13.5px;color:var(--txt-2);margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* hero */
+.hero{padding:40px 0 56px;background:radial-gradient(1200px 500px at 50% 0,#FFFBF2 0,var(--creme) 70%)}
+.hero h1{font-size:clamp(34px,6.4vw,58px);font-weight:900;text-align:center;margin-top:16px}
+.hero h1 .n{color:var(--morango)}
+.hero .apoio{font-family:Archivo,Inter,sans-serif;font-weight:800;color:var(--folha);text-align:center;font-size:clamp(19px,3.4vw,26px);margin:12px auto 0;max-width:760px;line-height:1.25}
+.hero-img{width:100%;max-width:560px;margin:26px auto 10px;filter:drop-shadow(0 18px 30px rgba(31,58,36,.18))}
+.hero p.txt{text-align:center;max-width:640px;margin:8px auto 0;color:var(--txt-2);font-size:17px}
+.hero p.txt b{color:var(--txt)}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;max-width:560px;margin:22px auto 26px}
+.checks li{list-style:none;display:flex;gap:8px;align-items:flex-start;font-weight:600;font-size:15px}
+.checks li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--folha);color:#fff;font-size:13px;display:grid;place-items:center;margin-top:1px}
+
+/* cards */
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:34px}
+.card{background:var(--branco);border:1px solid var(--borda);border-radius:var(--raio);padding:22px;box-shadow:var(--sombra)}
+.card h3{font-size:18px;font-weight:800;margin-bottom:6px}
+.card p{color:var(--txt-2);font-size:15px}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--folha-claro);display:grid;place-items:center;margin-bottom:12px;color:var(--folha)}
+.ico svg{width:24px;height:24px}
+.beneficio{display:flex;gap:14px;align-items:flex-start}
+.beneficio .ico{flex:none;margin:0}
+
+/* projetos por dentro: carrossel com setas sobrepostas */
+.dentro{background:var(--musgo);color:#EEF2E6;text-align:center;overflow:hidden}
+.dentro h2{color:#fff;margin-top:14px}
+.dentro .realce{background:var(--amarelo);color:var(--musgo);padding:0 8px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.pill-dentro{background:rgba(255,255,255,.1);color:#CFE6C4;border:1px solid rgba(255,255,255,.15)}
+.carrossel{position:relative;margin-top:6px}
+.trilho{display:flex;gap:16px;overflow-x:auto;padding:22px 0 46px;scrollbar-width:none;touch-action:pan-x pan-y}
+.trilho::-webkit-scrollbar{display:none}
+.slide{flex:0 0 min(66vw,280px);text-align:left;margin:0}
+.slide .ampliar{display:block;width:100%;padding:0;border:0;background:#fff;border-radius:14px;overflow:hidden;cursor:zoom-in;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.slide img{aspect-ratio:900/1272;object-fit:cover;width:100%}
+.slide figcaption{padding:12px 4px 0;display:grid;gap:2px}
+.slide figcaption b{font-family:Archivo,Inter,sans-serif;font-size:17px;color:#fff}
+.slide figcaption span{font-size:14px;color:#BFD0B8}
+.seta{position:absolute;top:calc(50% - 12px);transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--musgo);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.seta-l{left:max(8px,calc(50% - 185px))}.seta-r{right:max(8px,calc(50% - 185px))}
+.seta:focus-visible,.ampliar:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.duas-tit{color:#fff;font-family:Archivo,Inter,sans-serif;font-size:clamp(26px,7vw,34px);font-weight:900;line-height:1.15;margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.14)}
+.duas{display:grid;gap:22px;max-width:620px;margin:22px auto 0}
+.pag-linha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:center;text-align:left}
+.pag-txt{display:grid;gap:8px;justify-items:start;min-width:0}
+.pag-txt h4{font-family:Archivo,Inter,sans-serif;font-size:19px;font-weight:900;color:#fff;line-height:1.15;margin:0}
+.pag-txt p{color:#BFD0B8;font-size:14.5px;margin:0}
+.pag-linha .ampliar{display:block;width:100%;padding:0;border:0;background:#fff;border-radius:12px;overflow:hidden;cursor:zoom-in;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.pag-linha img{aspect-ratio:900/1272;object-fit:cover;width:100%}
+.tag-pag{background:var(--morango);color:#fff;font-weight:800;font-size:12.5px;padding:4px 12px;border-radius:999px}
+.dentro .cta-bloco{margin-top:30px}
+.zoom{position:fixed;inset:0;z-index:50;background:rgba(10,18,12,.92);display:grid;place-items:center;padding:16px}
+.zoom[hidden]{display:none}
+.zoom img{max-height:92vh;max-width:100%;border-radius:8px}
+.zoom-x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--musgo);font-size:26px;cursor:pointer}
+@media (max-width:560px){.pag-txt h4{font-size:17px}.pag-txt p{font-size:13.5px}}
+
+/* sem / com */
+.comp-img{position:relative;max-width:820px;margin:30px auto 0;border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra)}
+.comp-img .tag{position:absolute;top:12px;font-size:12.5px;font-weight:800;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.95)}
+.comp-img .tag.l{left:12px;color:var(--morango)}
+.comp-img .tag.r{right:12px;color:var(--folha)}
+.comp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:820px;margin:16px auto 0}
+.comp > div{border-radius:var(--raio);padding:20px}
+.comp .sem{background:var(--morango-claro);border:1px solid #F3C5CA}
+.comp .com{background:var(--folha-claro);border:1px solid #CFE0C2}
+.comp h3{font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.comp .sem h3{color:var(--morango)} .comp .com h3{color:var(--folha)}
+.comp li{list-style:none;display:flex;gap:8px;font-size:15px;margin:7px 0}
+.comp .sem li::before{content:"✕";color:var(--morango);font-weight:800}
+.comp .com li::before{content:"✓";color:var(--folha);font-weight:800}
+
+/* o que voce recebe */
+.recebe{max-width:520px;margin:30px auto 0;text-align:center;padding:28px 24px}
+.recebe h3{font-size:22px;font-weight:900}
+.recebe img{width:100%;max-width:320px;margin:16px auto}
+.lista{text-align:left;margin-top:8px}
+.lista li{list-style:none;display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid #F0E9DA;font-size:15px;font-weight:600}
+.lista li:first-child{border-top:0}
+.lista .ico{width:32px;height:32px;border-radius:9px;margin:0;flex:none}
+.lista .ico svg{width:18px;height:18px}
+.mais-bonus{font-family:Archivo,Inter,sans-serif;font-weight:900;color:var(--cta);margin-top:22px;font-size:18px;text-align:center}
+
+/* bonus (estilo dos bonus do MasterChef: cena 16:9 + texto + valor) */
+.bonus-lista{max-width:640px;margin:30px auto 0}
+.bonus{background:var(--branco);border-radius:22px;overflow:hidden;margin-top:24px;position:relative;box-shadow:0 12px 30px rgba(31,58,36,.12);border:1px solid var(--borda)}
+.bonus .num{position:absolute;right:14px;top:14px;z-index:2;background:var(--amarelo);color:var(--musgo);font-weight:800;font-size:12px;padding:5px 11px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.bonus .img-b{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.bonus .txt{padding:20px 20px 22px}
+.bonus h3{font-size:19px;font-weight:800}
+.bonus .txt p{color:var(--txt-2);margin:8px 0 14px;font-size:15px}
+.valor{display:inline-block;background:var(--musgo);color:#fff;font-weight:800;font-size:14px;padding:9px 18px;border-radius:999px}
+.valor s{color:#FF9AA5;margin:0 4px}
+.valor em{font-style:normal;color:#9BFF6A}
+.total-bonus{max-width:640px;margin:22px auto 0;text-align:center;border:2px dashed var(--folha);border-radius:16px;padding:14px;font-weight:700;background:var(--folha-claro)}
+.total-bonus s{color:var(--morango)} .total-bonus b{color:var(--folha)}
+
+/* cta intermediario */
+.cta-bloco{text-align:center;margin-top:36px}
+.cta-bloco .apoio{font-weight:700;color:var(--musgo);margin-top:10px}
+
+/* faixa de paginas */
+.faixa{overflow:hidden;margin-top:30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.faixa-trilho{display:flex;gap:14px;width:max-content;animation:rola 48s linear infinite}
+.faixa-trilho img{width:200px;border-radius:10px;box-shadow:var(--sombra);aspect-ratio:900/1272;object-fit:cover}
+@keyframes rola{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.faixa-trilho{animation:none}.btn{animation:none}}
+
+/* como funciona */
+.passos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:34px}
+.passo{text-align:center;padding:8px}
+.passo .num{width:52px;height:52px;margin:0 auto 12px;border-radius:50%;background:var(--branco);border:2px solid var(--folha);display:grid;place-items:center;position:relative;color:var(--folha)}
+.passo .num svg{width:24px;height:24px}
+.passo .num b{position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;background:var(--cta);color:#fff;font-size:12px;display:grid;place-items:center}
+.passo h3{font-size:16px;font-weight:800}
+.passo p{font-size:14px;color:var(--txt-2);margin-top:4px}
+
+/* por que faz sentido */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:34px}
+
+/* planos (estilo do MasterChef: basico bege + completo escuro com os e-books em leque) */
+.planos-wrap{max-width:520px;margin:0 auto}
+.plano{border-radius:24px;padding:28px 22px 24px;margin-top:30px;position:relative;text-align:center;overflow-x:clip}
+.plano h3{font-size:26px;font-weight:900;text-transform:uppercase}
+.plano.basico{background:#EFE3C9;border:1px solid var(--borda)}
+.plano.completo{background:radial-gradient(ellipse at 50% 0%,rgba(246,231,168,.16),transparent 55%),var(--musgo-2);color:#fff;margin-top:46px;box-shadow:0 0 0 3px var(--cta),0 24px 50px rgba(0,0,0,.35)}
+.plano.completo h3{color:#fff;margin-top:10px}
+.plano .mais{position:absolute;left:50%;top:-18px;transform:translateX(-50%);background:linear-gradient(90deg,var(--cta),var(--cta-2));color:#fff;font-weight:800;font-size:14px;padding:8px 18px;border-radius:999px;white-space:nowrap}
+.plano ul{list-style:none;text-align:left;margin-top:14px}
+.plano li{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:15.5px}
+.plano.completo li{border-color:rgba(255,255,255,.1);font-weight:700}
+.plano li::before{content:"✓";color:var(--folha);font-weight:900}
+.plano.completo li::before{color:#9BE07A}
+.plano li.b::before{content:"🎁"}
+.plano li.nao{opacity:.55}.plano li.nao::before{content:"✕";color:var(--morango)}
+.de{margin-top:22px;color:var(--morango);font-weight:700;font-size:15px}
+.plano.completo .de{color:#FF9AA5}
+.preco{font-family:Archivo,Inter,sans-serif;font-weight:900;font-size:54px;color:var(--folha);line-height:1.05}
+.plano.completo .preco{color:#9BE07A}
+.parc{font-size:15px;opacity:.85}
+.eco{font-size:14.5px;margin:8px 0 20px;font-weight:600}
+.noventa{background:var(--morango);color:#fff;font-weight:700;font-size:14px;padding:12px;margin:22px -22px -24px;border-radius:0 0 24px 24px}
+.pagamentos{margin-top:16px;font-size:12px;opacity:.7;letter-spacing:.05em}
+.mock-comp{position:relative;width:100%;max-width:440px;aspect-ratio:1/0.68;margin:10px auto 20px}
+.mock-comp img{position:absolute;left:50%;bottom:7%;width:30%;border-radius:3px 6px 6px 3px;transform-origin:50% 100%;box-shadow:0 14px 30px rgba(0,0,0,.55)}
+.mock-comp .b1{transform:translateX(-50%) translateX(-118%) rotate(-24deg);z-index:1}
+.mock-comp .b2{transform:translateX(-50%) translateX(-62%) rotate(-12deg);z-index:2}
+.mock-comp .b3{transform:translateX(-50%) translateX(62%) rotate(12deg);z-index:2}
+.mock-comp .b4{transform:translateX(-50%) translateX(118%) rotate(24deg);z-index:1}
+.mock-comp .b5{width:27%;transform:translateX(-50%) translateY(-52%);z-index:3}
+.mock-comp .capa{width:40%;bottom:0;transform:translateX(-50%);z-index:5;box-shadow:0 22px 46px rgba(0,0,0,.7),0 0 0 2px rgba(246,231,168,.6)}
+.mock-comp .mais-b{position:absolute;right:0;top:0;z-index:6;background:var(--morango);color:#fff;font-family:Archivo,Inter,sans-serif;font-weight:900;font-size:13px;padding:8px 12px;border-radius:10px;transform:rotate(6deg);box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.capa-basico{width:46%;max-width:200px;margin:16px auto 4px;border-radius:3px 6px 6px 3px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.seguro{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;opacity:.8;font-weight:600}
+
+/* garantia */
+.garantia{max-width:640px;margin:0 auto;text-align:center;background:var(--folha-claro);border:1px solid #CFE0C2;border-radius:22px;padding:30px 24px}
+.garantia img{width:130px;margin:0 auto 10px}
+.garantia h2{font-size:clamp(24px,4vw,30px)}
+.garantia p{color:var(--txt-2);margin-top:10px}
+.garantia .zero{margin-top:14px;font-weight:800;color:var(--folha)}
+
+/* faq */
+.faq{max-width:760px;margin:30px auto 0}
+.faq details{background:var(--branco);border:1px solid var(--borda);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:17px 48px 17px 18px;font-weight:700;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--folha);font-weight:600}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 18px 18px;color:var(--txt-2)}
+
+/* rodape */
+footer{background:var(--musgo-2);color:#CFD8C8;text-align:center;padding:40px 0 34px;font-size:13.5px}
+footer .marca{font-family:Archivo,Inter,sans-serif;font-weight:900;color:#fff;font-size:18px;letter-spacing:.04em}
+footer nav{display:flex;justify-content:center;gap:18px;margin:12px 0 18px;flex-wrap:wrap}
+footer nav a{color:#fff;font-weight:700;text-decoration:none;text-transform:uppercase;font-size:12.5px;letter-spacing:.05em}
+footer .legal{max-width:640px;margin:0 auto;font-size:12px;opacity:.8}
+
+/* placeholder */
+/* popup de upsell do Plano Básico (mesmo padrão de brincos-arame) */
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;z-index:99;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-fundo{position:absolute;inset:0;background:rgba(22,41,26,.66);backdrop-filter:blur(2px);animation:aparece .18s ease}
+.modal-caixa{position:relative;background:#fff;border-radius:20px;padding:clamp(28px,4vw,40px) clamp(20px,3.4vw,36px);width:100%;max-width:460px;text-align:center;box-shadow:0 30px 70px rgba(22,41,26,.34);animation:sobe .22s cubic-bezier(.2,.9,.3,1.2);max-height:92vh;overflow-y:auto}
+@keyframes aparece{from{opacity:0}to{opacity:1}}
+@keyframes sobe{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.modal-x{position:absolute;top:10px;right:12px;background:none;border:none;font-size:26px;line-height:1;color:#9AA49A;cursor:pointer;padding:6px;font-family:inherit}
+.modal-caixa h3{font-size:clamp(21px,3vw,26px);margin-bottom:10px}
+.modal-sub{font-size:15px;color:var(--txt-2);line-height:1.55;margin-bottom:20px}
+.modal-preco{border:2px dashed #CFE0C2;background:var(--folha-claro);border-radius:14px;padding:18px;margin-bottom:20px}
+.modal-preco s{color:#8C9689;font-size:16px}
+.modal-valor{font-family:Archivo,Inter,sans-serif;font-size:clamp(38px,6vw,48px);font-weight:900;color:var(--folha);line-height:1;margin:4px 0 6px}
+.modal-valor small{font-size:20px;vertical-align:top;margin-right:3px}
+.modal-preco span{display:block;font-size:13.5px;color:var(--folha);font-weight:700}
+.modal-caixa .btn{max-width:none}
+.modal-nao{display:block;width:100%;margin-top:12px;background:none;border:1px solid var(--borda);border-radius:12px;padding:14px;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--txt-2);cursor:pointer}
+.modal-nao:hover{background:var(--creme)}
+.ph{display:grid;place-items:center;background:repeating-linear-gradient(45deg,#EFE7D6,#EFE7D6 10px,#E7DDC8 10px,#E7DDC8 20px);border-radius:12px;color:var(--txt-2);font-size:13px;font-weight:600;padding:12px;width:100%}
+
+@media (max-width:760px){
+  section{padding:52px 0}
+  .grid-2,.grid-3,.comp,.bonus-grid{grid-template-columns:1fr}
+  .bonus:last-child:nth-child(odd){max-width:none}
+  .passos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .checks{grid-template-columns:1fr;max-width:340px}
+  .faixa-trilho img{width:150px}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. BARRA SUPERIOR -->
+<div class="topo">🍓 Oferta especial: comece hoje seu cantinho de morangos em casa — <b>a partir de R$ 10</b></div>
+
+<!-- 2. HERO -->
+<header class="hero">
+  <div class="wrap centro">
+    <span class="pill pill-creme">🍓 Oferta exclusiva</span>
+    <h1><span class="n">30 Projetos</span> para Cultivar<br>Morangos em Casa</h1>
+    <p class="apoio">Aprenda a montar estruturas com vasos, PVC, madeira, recipientes reaproveitados e projetos com PET, mesmo tendo pouco espaço.</p>
+    <img class="hero-img" src="assets/hero.webp" width="1024" height="1024" fetchpriority="high"
+         alt="Apostila 30 Projetos para Cultivar Morangos em Casa com as páginas internas dos projetos"
+         data-ph="assets/hero.webp — mockup do produto" onerror="phFalha(this)">
+    <a class="btn ir-planos" href="#oferta" style="margin-top:18px">Quero meus 30 projetos</a>
+    <ul class="checks">
+      <li>Acesso digital imediato</li>
+      <li>30 projetos com 2 páginas por projeto</li>
+      <li>5 bônus no Plano Completo</li>
+      <li>Ideal para iniciantes</li>
+    </ul>
+  </div>
+</header>
+
+<!-- 3. PROJETOS POR DENTRO (carrossel) -->
+<section class="dentro">
+  <div class="wrap">
+    <span class="pill pill-dentro">👁 Por dentro do material</span>
+    <h2>Veja alguns dos <span class="realce">30 projetos</span> que você vai montar em casa</h2>
+  </div>
+  <div class="carrossel">
+    <button class="seta seta-l" type="button" aria-label="Projeto anterior" data-dir="-1">‹</button>
+    <div class="trilho" id="trilho">
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P05_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 05"><img loading="lazy" src="assets/paginas/P05_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 05: Jardineira Autoirrigável" data-ph="P05" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P07_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 07"><img loading="lazy" src="assets/paginas/P07_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 07: Galões com Gotejador PET" data-ph="P07" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P09_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 09"><img loading="lazy" src="assets/paginas/P09_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 09: Balde com Furos Laterais" data-ph="P09" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P10_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 10"><img loading="lazy" src="assets/paginas/P10_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 10: Canteiro com Mini-Cobertura" data-ph="P10" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P11_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 11"><img loading="lazy" src="assets/paginas/P11_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 11: Painel Horizontal de PVC" data-ph="P11" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P13_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 13"><img loading="lazy" src="assets/paginas/P13_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 13: Torre de PVC com Vasos" data-ph="P13" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P19_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 19"><img loading="lazy" src="assets/paginas/P19_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 19: Canteiro com Rede de Proteção" data-ph="P19" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P20_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 20"><img loading="lazy" src="assets/paginas/P20_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 20: Estante de PVC em Zigue-Zague" data-ph="P20" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P21_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 21"><img loading="lazy" src="assets/paginas/P21_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 21: Vaso com Garrafão PET" data-ph="P21" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P22_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 22"><img loading="lazy" src="assets/paginas/P22_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 22: Jardineira de Garrafão Deitado" data-ph="P22" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P23_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 23"><img loading="lazy" src="assets/paginas/P23_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 23: Pallet com Canos de PVC" data-ph="P23" onerror="phFalha(this)"></button></figure>
+        <figure class="slide"><button type="button" class="ampliar" data-src="assets/paginas/P26_Ficha_Tecnica.webp" aria-label="Ampliar o Projeto 26"><img loading="lazy" src="assets/paginas/P26_Ficha_Tecnica.webp" width="900" height="1272" alt="Ficha técnica do Projeto 26: Garrafas PET Autoirrigáveis" data-ph="P26" onerror="phFalha(this)"></button></figure>
+    </div>
+    <button class="seta seta-r" type="button" aria-label="Próximo projeto" data-dir="1">›</button>
+  </div>
+  <div class="wrap">
+    <h3 class="duas-tit">Cada projeto vem em <span class="realce">duas páginas</span></h3>
+    <div class="duas">
+      <div class="pag-linha"><div class="pag-txt"><span class="tag-pag">Página 1</span><h4>Especificações do projeto</h4><p>Foto pronta, desenho com as medidas, quantas mudas cabem, lista de material e ferramentas.</p></div><button type="button" class="ampliar" data-src="assets/paginas/P16_Ficha_Tecnica.webp" aria-label="Ampliar a página de especificações"><img loading="lazy" src="assets/paginas/P16_Ficha_Tecnica.webp" width="900" height="1272" alt="Página de especificações da Torre de PVC com Bolsos" onerror="phFalha(this)"></button></div>
+      <div class="pag-linha"><div class="pag-txt"><span class="tag-pag">Página 2</span><h4>Montagem prática</h4><p>8 etapas com foto de cada passo, do primeiro corte até a muda plantada.</p></div><button type="button" class="ampliar" data-src="assets/paginas/P16_Montagem.webp" aria-label="Ampliar a página de montagem"><img loading="lazy" src="assets/paginas/P16_Montagem.webp" width="900" height="1272" alt="Página de montagem da Torre de PVC com Bolsos" onerror="phFalha(this)"></button></div>
+    </div>
+  </div>
+</section>
+
+<div class="zoom" id="zoom" hidden><button type="button" class="zoom-x" aria-label="Fechar">×</button><img alt="Página ampliada"></div>
+
+<!-- 3b. O QUE VAI MUDAR -->
+<section>
+  <div class="wrap">
+    <h2>O que vai mudar no seu <span class="destaque">cultivo de morangos</span></h2>
+    <p class="sub">Chega de tentar no improviso. Agora você terá projetos prontos e orientação clara.</p>
+    <div class="grid-2">
+      <div class="card beneficio">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div><h3>Escolha o projeto certo para o seu espaço</h3><p>Opções para varanda, quintal, janela, parede e pequenos ambientes.</p></div>
+      </div>
+      <div class="card beneficio">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.5 2.5-2.1-.4-.4-2.1z"/></svg></div>
+        <div><h3>Monte com materiais acessíveis</h3><p>Use vasos, madeira, PVC, recipientes reaproveitados e garrafas PET.</p></div>
+      </div>
+      <div class="card beneficio">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <div><h3>Pare de improvisar sem saber por onde começar</h3><p>Medidas, lista de materiais e instruções organizadas em cada projeto.</p></div>
+      </div>
+      <div class="card beneficio">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-2 7-6 7-11a7 7 0 0 0-14 0c0 5 3 9 7 11z"/><path d="M12 8v6M9 11h6"/></svg></div>
+        <div><h3>Comece mesmo sendo iniciante</h3><p>Apostila didática e visual, feita para quem nunca cultivou morangos antes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SEM / COM -->
+<section>
+  <div class="wrap">
+    <h2>Veja a diferença entre cultivar <span class="destaque">no improviso</span> e com <span class="verde">projetos prontos</span></h2>
+    <div class="comp-img">
+      <img loading="lazy" src="assets/comparacao.webp" width="1536" height="1024" alt="À esquerda, varanda com vasos improvisados e plantas murchas; à direita, a mesma varanda com estruturas organizadas cheias de morangos" data-ph="assets/comparacao.webp" onerror="phFalha(this)">
+      <span class="tag l">✕ Sem os projetos</span><span class="tag r">✓ Com os projetos</span>
+    </div>
+    <div class="comp">
+      <div class="sem"><h3>Sem os projetos</h3><ul>
+        <li>Não sabe qual estrutura escolher</li>
+        <li>Compra materiais sem planejamento</li>
+        <li>Erra espaço, drenagem ou montagem</li>
+        <li>Tem dificuldade para organizar o cultivo</li>
+        <li>Fica dependente de vídeos soltos</li></ul></div>
+      <div class="com"><h3>Com os projetos</h3><ul>
+        <li>Escolhe o modelo ideal para seu espaço</li>
+        <li>Sabe exatamente o que comprar</li>
+        <li>Segue medidas e etapas claras</li>
+        <li>Monta as estruturas com mais confiança</li>
+        <li>Começa com orientação organizada</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. O QUE VOCE RECEBE -->
+<section class="alt">
+  <div class="wrap">
+    <h2>O que você recebe <span class="verde">ao entrar hoje</span></h2>
+    <div class="card recebe">
+      <img loading="lazy" src="assets/hero.webp" width="1024" height="1024" alt="Mockup da apostila 30 Projetos para Cultivar Morangos em Casa" data-ph="assets/hero.webp" onerror="phFalha(this)">
+      <ul class="lista">
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5L12 17l-6.5 4 2-7.5L2 9h7z"/></svg></span>30 projetos completos para cultivar morangos em casa</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>Ficha técnica e lista de materiais</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>Páginas de montagem passo a passo</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11"/></svg></span>Projetos para varanda, janela, parede e quintal</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2h6v4l3 3v13H6V9l3-3z"/></svg></span>Projetos com madeira, PVC, vasos e PET</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>Orientações práticas para começar</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>Acesso imediato ao material digital</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7. BONUS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="centro"><span class="pill pill-cta">🎁 5 bônus exclusivos</span></div>
+    <h2 style="margin-top:14px">E não para por aí... <span class="destaque">tem mais!</span></h2>
+    <p class="sub">No Plano Completo você também recebe:</p>
+    <div class="bonus-lista">
+      <article class="bonus"><span class="num">BÔNUS #1</span><img class="img-b" loading="lazy" src="assets/ebook/bonus-1.webp" width="1536" height="864" alt="Bônus 1: SOS Morangueiro" data-ph="assets/ebook/bonus-1.webp" onerror="phFalha(this)">
+        <div class="txt"><h3>Bônus #1 — SOS Morangueiro</h3><p>Aprenda a identificar folhas amareladas, mudas murchas, raízes comprometidas e frutos apodrecendo, e o que fazer em cada caso.</p><span class="valor">Valor: <s>R$27</s> <em>GRÁTIS</em></span></div></article>
+      <article class="bonus"><span class="num">BÔNUS #2</span><img class="img-b" loading="lazy" src="assets/ebook/bonus-2.webp" width="1536" height="864" alt="Bônus 2: Guia das Mudas e Sementes" data-ph="assets/ebook/bonus-2.webp" onerror="phFalha(this)">
+        <div class="txt"><h3>Bônus #2 — Guia das Mudas e Sementes</h3><p>Como escolher mudas saudáveis, quando vale começar por semente e o que fazer nos primeiros 30 dias para evitar erros logo no começo.</p><span class="valor">Valor: <s>R$19</s> <em>GRÁTIS</em></span></div></article>
+      <article class="bonus"><span class="num">BÔNUS #3</span><img class="img-b" loading="lazy" src="assets/ebook/bonus-3.webp" width="1536" height="864" alt="Bônus 3: Guia de Adubação dos Morangos" data-ph="assets/ebook/bonus-3.webp" onerror="phFalha(this)">
+        <div class="txt"><h3>Bônus #3 — Guia de Adubação dos Morangos</h3><p>Orientações práticas sobre substrato, adubo orgânico e o que dar à planta na floração e na frutificação.</p><span class="valor">Valor: <s>R$19</s> <em>GRÁTIS</em></span></div></article>
+      <article class="bonus"><span class="num">BÔNUS #4</span><img class="img-b" loading="lazy" src="assets/ebook/bonus-4.webp" width="1536" height="864" alt="Bônus 4: Multiplique seus Morangueiros" data-ph="assets/ebook/bonus-4.webp" onerror="phFalha(this)">
+        <div class="txt"><h3>Bônus #4 — Multiplique seus Morangueiros</h3><p>Aproveite os estolões para produzir novas mudas: como prender, quando a raiz está formada e a hora certa de separar.</p><span class="valor">Valor: <s>R$17</s> <em>GRÁTIS</em></span></div></article>
+      <article class="bonus"><span class="num">BÔNUS #5</span><img class="img-b" loading="lazy" src="assets/ebook/bonus-5.webp" width="1536" height="864" alt="Bônus 5: Calendário de Cuidados e Colheita" data-ph="assets/ebook/bonus-5.webp" onerror="phFalha(this)">
+        <div class="txt"><h3>Bônus #5 — Calendário de Cuidados e Colheita</h3><p>O que fazer em cada fase do morangueiro, do plantio à colheita, e como colher sem machucar o fruto.</p><span class="valor">Valor: <s>R$17</s> <em>GRÁTIS</em></span></div></article>
+    </div>
+    <p class="total-bonus">Valor total dos bônus: <s>R$ 99,00</s> — hoje: <b>GRÁTIS no Plano Completo</b></p>
+
+    <!-- 8. CTA INTERMEDIARIO -->
+    <div class="cta-bloco">
+      <a class="btn ir-planos" href="#oferta">Quero receber tudo por R$ 25</a>
+      <p class="apoio">30 projetos + 5 bônus + acesso imediato.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11. POR QUE FAZ SENTIDO (sem depoimentos inventados) -->
+<section class="fundo-verde">
+  <div class="wrap">
+    <h2>Por que esse material faz sentido <span class="verde">para quem está começando?</span></h2>
+    <div class="grid-3">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>Fácil de entender</h3><p>Linguagem simples, sem termos técnicos complicados. Cada etapa diz o que fazer e por quê.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div><h3>Visual e organizado</h3><p>Fotos, desenho técnico com medidas e etapas numeradas: você vê o projeto antes de montar.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11"/></svg></div><h3>Projetos para cada espaço</h3><p>Da janela do apartamento ao quintal: escolha o que cabe no seu espaço e no seu bolso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. OFERTA -->
+<section id="oferta">
+  <div class="wrap">
+    <h2>Escolha o plano e comece seu <span class="destaque">cantinho de morangos</span></h2>
+    <p class="sub">Pagamento único, acesso imediato.</p>
+    <div class="planos-wrap">
+
+      <div class="plano basico">
+        <h3>Plano Básico</h3>
+        <ul>
+          <li>30 projetos para cultivar morangos em casa</li>
+          <li>Ficha técnica com medidas e materiais</li>
+          <li>Montagem passo a passo</li>
+          <li>Acesso imediato após a compra</li>
+          <li class="nao">Sem os 5 bônus</li>
+        </ul>
+        <p class="de">de <s>R$ 27,90</s> por:</p>
+        <div class="preco">R$ 10,00</div>
+        <p class="parc">pagamento único</p>
+        <p class="eco">Você economiza <b>R$ 17,90</b></p>
+        <!-- CHECKOUT Plano Básico (R$ 10): o clique abre o popup do Completo antes de seguir -->
+        <a class="btn js-checkout-basico" id="btn-essencial" data-checkout href="TROCAR-CHECKOUT-BASICO">Quero o plano básico</a>
+        <div class="noventa">9 em cada 10 pessoas escolhem o plano abaixo 👇</div>
+      </div>
+
+      <div class="plano completo">
+        <span class="mais">⚡ MAIS VENDIDO</span>
+        <h3>Plano Completo</h3>
+        <div class="mock-comp" aria-hidden="true">
+          <img class="b1" src="assets/ebook/capa-1.webp" alt="" loading="lazy" onerror="this.remove()">
+          <img class="b4" src="assets/ebook/capa-5.webp" alt="" loading="lazy" onerror="this.remove()">
+          <img class="b2" src="assets/ebook/capa-2.webp" alt="" loading="lazy" onerror="this.remove()">
+          <img class="b3" src="assets/ebook/capa-4.webp" alt="" loading="lazy" onerror="this.remove()">
+          <img class="b5" src="assets/ebook/capa-3.webp" alt="" loading="lazy" onerror="this.remove()">
+          <img class="capa" src="assets/ebook/capa-0.webp" alt="" loading="lazy" onerror="this.remove()">
+        </div>
+        <ul>
+          <li>Os 30 projetos para cultivar morangos em casa</li>
+          <li class="b">Bônus: SOS Morangueiro</li>
+          <li class="b">Bônus: Guia das Mudas e Sementes</li>
+          <li class="b">Bônus: Guia de Adubação dos Morangos</li>
+          <li class="b">Bônus: Multiplique seus Morangueiros</li>
+          <li class="b">Bônus: Calendário de Cuidados e Colheita</li>
+        </ul>
+        <p class="de">de <s>R$ 126,90</s> por:</p>
+        <div class="preco">R$ 25,00</div>
+        <p class="parc">pagamento único</p>
+        <p class="eco">Você economiza <b>R$ 101,90</b></p>
+        <!-- CHECKOUT Plano Completo (R$ 25) -->
+        <a class="btn js-checkout-completo" data-checkout href="TROCAR-CHECKOUT-COMPLETO">Quero o plano completo</a>
+        <div class="seguro"><span>🔒 Compra segura</span><span>⚡ Acesso imediato</span><span>🛡️ 7 dias de garantia</span></div>
+        <p class="pagamentos">PIX · CARTÃO · COMPRA SEGURA</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- POPUP DE UPSELL: abre quando a pessoa clica no Plano Básico. O botão tem link
+     PRÓPRIO (PopUp Completo, R$ 16,90), não é o link do Plano Completo. -->
+<div class="modal" id="upsell" hidden>
+  <div class="modal-fundo" data-fechar></div>
+  <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="upsell-titulo">
+    <button class="modal-x" data-fechar aria-label="Fechar">×</button>
+    <h3 id="upsell-titulo">Espera, só nesta tela 🍓</h3>
+    <p class="modal-sub">Leve o <b>Plano Completo</b>, com os 30 projetos e os 5 bônus, por um valor que não aparece em nenhum outro lugar do site.</p>
+    <div class="modal-preco">
+      <s>R$ 25,00</s>
+      <div class="modal-valor"><small>R$</small>16,90</div>
+      <span>só R$ 6,90 a mais que o básico</span>
+    </div>
+    <a class="btn" id="upsell-sim" data-checkout href="TROCAR-CHECKOUT-POPUP">Quero o completo por R$ 16,90</a>
+    <button class="modal-nao" id="upsell-nao">Continuar só com o básico</button>
+  </div>
+</div>
+
+<!-- 13. GARANTIA -->
+<section class="alt">
+  <div class="wrap">
+    <div class="garantia">
+      <img loading="lazy" src="assets/selo.png" width="1024" height="1024" alt="Selo de garantia de 7 dias" data-ph="selo 7 dias" onerror="phFalha(this)">
+      <h2>Garantia incondicional de 7 dias</h2>
+      <p>Se por qualquer motivo você sentir que o material não é para você, poderá solicitar o reembolso dentro do prazo de garantia, conforme as regras da plataforma de pagamento.</p>
+      <p class="zero">✅ Risco zero para você, nos dois planos</p>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FAQ -->
+<section>
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>O que está incluído no pacote?</summary><p>A apostila com 30 projetos para cultivar morangos em casa, cada um com 2 páginas (ficha técnica e montagem passo a passo). No Plano Completo você leva também os 5 bônus: SOS Morangueiro, Guia das Mudas e Sementes, Guia de Adubação, Multiplique seus Morangueiros e Calendário de Cuidados e Colheita.</p></details>
+      <details><summary>Como vou receber o material?</summary><p>Logo após a confirmação do pagamento, você recebe o acesso no seu e-mail e no seu WhatsApp.</p></details>
+      <details><summary>O material é digital ou físico?</summary><p>É 100% digital, em PDF. Nada é enviado pelo correio. Você pode ler na tela ou imprimir as páginas que quiser.</p></details>
+      <details><summary>Para quem esse material é indicado?</summary><p>Para quem quer cultivar morangos em casa, em vaso, varanda, janela, parede ou quintal, e prefere seguir um projeto pronto a montar tudo no improviso.</p></details>
+      <details><summary>Preciso ter experiência com jardinagem?</summary><p>Não. Os projetos foram pensados para iniciantes, com medidas, lista de materiais e cada etapa explicada.</p></details>
+      <details><summary>Funciona para quem tem pouco espaço?</summary><p>Sim. Há projetos para janela, parede, varanda pequena e vaso individual, além de estruturas verticais que ocupam pouco chão.</p></details>
+      <details><summary>Os projetos ensinam medidas e materiais?</summary><p>Sim. Cada ficha técnica traz o desenho com as medidas, a profundidade de terra, a quantidade de mudas, a lista de materiais com quantidades e as ferramentas necessárias.</p></details>
+      <details><summary>Os bônus já estão incluídos?</summary><p>No Plano Completo, sim. Os 5 bônus estão nele (R$ 25). O Plano Básico (R$ 10) traz os 30 projetos, sem os bônus.</p></details>
+      <details><summary>E se eu não gostar do material?</summary><p>Você tem 7 dias de garantia. Se não gostar, pode pedir o reembolso dentro desse prazo, conforme as regras da plataforma de pagamento.</p></details>
+      <details><summary>Posso acessar pelo celular?</summary><p>Sim. O material abre no celular, no tablet e no computador.</p></details>
+    </div>
+    <div class="cta-bloco">
+        <a class="btn ir-planos" href="#oferta">Quero meus 30 projetos</a>
+    </div>
+  </div>
+</section>
+
+<!-- 15. RODAPE -->
+<footer>
+  <div class="wrap">
+    <div class="marca">🍓 MORANGOS EM CASA</div>
+    <p style="margin-top:6px">© 2026 Morangos em Casa. Todos os direitos reservados.</p>
+    <nav><a href="#">Termos de uso</a><a href="#">Política de privacidade</a></nav>
+    <p class="legal">Este site não é afiliado ao Meta, Facebook ou Instagram. O desenvolvimento e a produção dos morangueiros dependem do clima, da muda escolhida, da luz e dos cuidados de cada pessoa; o material não garante colheita.</p>
+  </div>
+</footer>
+
+<script>
+// zoom das paginas (delegado: vale tambem para as copias do carrossel)
+(function(){var z=document.getElementById("zoom");if(!z)return;var im=z.querySelector("img");
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".ampliar");if(b){im.src=b.dataset.src;z.hidden=false;}});
+z.addEventListener("click",function(e){if(e.target!==im)z.hidden=true;});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")z.hidden=true;});})();
+
+// carrossel infinito: 3 copias da lista, comeca na do meio e desliza devagar para a esquerda sem parar.
+// Quando a pessoa toca, arrasta ou usa as setas, ele espera um pouco e volta a andar de onde ela deixou.
+(function(){
+  var t=document.getElementById("trilho");if(!t)return;
+  var orig=[].slice.call(t.children);
+  function copia(el){var c=el.cloneNode(true);c.setAttribute("aria-hidden","true");c.querySelectorAll("button").forEach(function(b){b.tabIndex=-1;});return c;}
+  var ante=document.createDocumentFragment(),depois=document.createDocumentFragment();
+  orig.forEach(function(el){ante.appendChild(copia(el));depois.appendChild(copia(el));});
+  t.insertBefore(ante,t.firstChild);t.appendChild(depois);
+  function largura(){return orig[0].offsetLeft-t.children[0].offsetLeft;}
+  var pos=0,parado=0,VEL=28,ult=0; // px por segundo
+  function inicio(){pos=largura();t.scrollLeft=pos;}
+  function ajusta(){var L=largura();if(L<=0)return;if(pos>=2*L)pos-=L;if(pos<L*0.5)pos+=L;}
+  inicio();window.addEventListener("load",inicio);window.addEventListener("resize",function(){pos=t.scrollLeft;ajusta();t.scrollLeft=pos;});
+  var reduz=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function quadro(ts){
+    var dt=ult?Math.min((ts-ult)/1000,0.1):0;ult=ts;
+    if(!reduz&&!document.hidden&&Date.now()>parado){pos+=VEL*dt;ajusta();t.scrollLeft=pos;}
+    else{pos=t.scrollLeft;ajusta();if(Math.abs(t.scrollLeft-pos)>1)t.scrollLeft=pos;}
+    requestAnimationFrame(quadro);
+  }
+  requestAnimationFrame(quadro);
+  function pausa(ms){parado=Date.now()+ms;}
+  ["pointerdown","touchstart","wheel"].forEach(function(ev){t.addEventListener(ev,function(){pausa(4000);},{passive:true});});
+  t.addEventListener("mouseenter",function(){pausa(1e9);});t.addEventListener("mouseleave",function(){pausa(800);});
+  document.querySelectorAll(".seta").forEach(function(b){b.addEventListener("click",function(){
+    pausa(2500);var s=t.querySelector(".slide");var p=s?s.getBoundingClientRect().width+16:300;
+    t.scrollBy({left:p*Number(b.dataset.dir),behavior:"smooth"});});});
+})();
+
+// Popup de upsell: quem clica no Plano Básico vê a oferta do Completo por R$ 16,90
+// antes de seguir. Quem recusa vai para o checkout do básico, como pediu.
+(function(){
+  var modal=document.getElementById("upsell"),abre=document.getElementById("btn-essencial"),nao=document.getElementById("upsell-nao");
+  if(!modal||!abre)return;
+  var ultimoFoco=null;
+  function abrir(e){
+    e.preventDefault();
+    window.__indoParaCheckout=false; // só abriu o popup: o back redirect continua armado
+    ultimoFoco=document.activeElement;
+    var barra=window.innerWidth-document.documentElement.clientWidth;
+    modal.hidden=false;document.body.style.overflow="hidden";
+    if(barra>0)document.body.style.paddingRight=barra+"px";
+    var alvo=document.getElementById("upsell-sim");if(alvo)alvo.focus();
+  }
+  function fechar(){modal.hidden=true;document.body.style.overflow="";document.body.style.paddingRight="";if(ultimoFoco)ultimoFoco.focus();}
+  abre.addEventListener("click",abrir);
+  modal.querySelectorAll("[data-fechar]").forEach(function(b){b.addEventListener("click",fechar);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!modal.hidden)fechar();});
+  // recusou: segue para o checkout do básico. Lê o link NA HORA do clique, porque a
+  // UTMify acrescenta as UTMs aos links depois que a página carrega.
+  if(nao)nao.addEventListener("click",function(){window.__indoParaCheckout=true;window.location.href=abre.getAttribute("href");});
+})();
+</script>
+</body>
+</html>
